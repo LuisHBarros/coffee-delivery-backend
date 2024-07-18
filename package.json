@@ -6,10 +6,20 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "elysia": "latest"
+    "better-sqlite3": "^11.1.2",
+    "drizzle-orm": "^0.32.0",
+    "elysia": "latest",
+    "eslint": "9.x"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@eslint/js": "^9.7.0",
+    "@faker-js/faker": "^8.4.1",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^20.14.11",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.23.0",
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.16.1"
   },
   "module": "src/index.js"
 }

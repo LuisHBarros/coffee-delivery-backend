@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "bun:test";
 import { faker } from "@faker-js/faker";
 import { createCoffee } from "./create-coffee";
-import { CoffeeInMemoryRepository } from "../../core/repository/in-memory-repository.ts/coffee-in-memory-repository";
+import { CoffeeInMemoryRepository } from "../../../core/repository/in-memory-repository.ts/coffee-in-memory-repository";
 
 describe("test the create coffee service", () => {
     let coffeeRepository: CoffeeInMemoryRepository;
@@ -33,6 +33,8 @@ describe("test the create coffee service", () => {
         };
         const response = await sut.execute(coffee);
         expect(response.isLeft()).toBe(true);
+
         expect(response.value?.message).toBe("Invalid coffee type");
     });
 });
+

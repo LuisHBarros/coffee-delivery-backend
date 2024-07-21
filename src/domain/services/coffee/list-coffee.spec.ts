@@ -1,8 +1,8 @@
 import { beforeEach, describe, expect, it } from "bun:test";
 import { ListCoffee } from "./list-coffee";
-import { CoffeeInMemoryRepository } from "../../core/repository/in-memory-repository.ts/coffee-in-memory-repository";
 import { faker } from "@faker-js/faker";
-import { Coffee, CoffeeTypes } from "../../core/entities/coffee";
+import { Coffee, CoffeeTypes } from "../../../core/entities/coffee";
+import { CoffeeInMemoryRepository } from "../../../core/repository/in-memory-repository.ts/coffee-in-memory-repository";
 
 describe("test the list coffee service", () => {
     let sut: ListCoffee;
@@ -48,7 +48,9 @@ describe("test the list coffee service", () => {
         const id = 1;
         sut.execute({ id }).then((response) => {
             expect(response.isLeft()).toBe(true);
+            // @ts-expect-error value is not null
             expect(response.value?.message).toBe("Coffee not found");
         });
     });
 });
+
